@@ -3,7 +3,7 @@ const fileController = require('../controllers/fileController');
 const fileUpload = require('../middlewares/fileUpload');
 const fileRouter = Router();
 
-fileRouter.post('/create', fileController.create);
+fileRouter.post('/create', fileUpload.uploadSingle, fileController.create);
 
 fileRouter.get('/all', fileController.all);
 fileRouter.get('/single/:id', fileController.single);
